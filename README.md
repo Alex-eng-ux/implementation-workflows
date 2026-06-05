@@ -85,6 +85,47 @@ In short:
 - source repos are where individual skill families live and evolve
 - `implementation-workflows` is the packaged integration layer
 
+## Workflow Generations
+
+This repository is the final integrated form of an earlier multi-repo workflow evolution.
+
+### Generation 1
+
+The first working stack was the standard, non-auto workflow:
+
+- `parallel-decomposer-skill`
+- `code-analyzer-suite`
+- `grill-me`
+- `iterative-implementation-review`
+
+That combination provided the first complete workflow:
+
+- decompose the work
+- review the changed surface
+- pressure-test assumptions
+- keep looping until the implementation was ready
+
+### Generation 2
+
+The second working stack added auto-capable variants:
+
+- `parallel-decomposer-auto`
+- `code-analyzer-auto`
+- `grill-me`
+- `iterative-implementation-review-auto`
+
+That made the same workflow available in runtimes that could orchestrate workers or sub-agents directly.
+
+### Final Integrated Suite
+
+`implementation-workflows` packages both generations into one repository and adds:
+
+- `landable-implementation-loop` as the user-facing top-level workflow entry
+- unified installation docs and cross-agent installers
+- one distribution point for the full stack
+
+So this repository is not a replacement for the source repos in the sense of authorship. It is the final packaged workflow layer that sits above them.
+
 ## Skill Map
 
 | Installed skill name | Source directory in this repo | Purpose |
