@@ -23,6 +23,20 @@ If you want the full workflow, install these top-level skill directories into yo
 
 Use [skills/README.md](D:/FakeC/MCP/offiiceMCP/_mergework/implementation-workflows/skills/README.md) as the install map.
 
+Quick install examples:
+
+```bash
+./install.sh --all-skills --platform codex
+./install.sh --all-skills --all-platforms
+```
+
+On Windows PowerShell:
+
+```powershell
+.\install.ps1 -AllSkills -Platform codex
+.\install.ps1 -AllSkills -AllPlatforms
+```
+
 ## Included Skills
 
 ### First-party skills
@@ -104,6 +118,8 @@ For broad or risky work, the intended flow is:
 ## Installation
 
 You can use this repository in two practical ways.
+
+For a fuller cross-agent guide, see [docs/installation.md](D:/FakeC/MCP/offiiceMCP/_mergework/implementation-workflows/docs/installation.md).
 
 ### Install the full workflow
 
