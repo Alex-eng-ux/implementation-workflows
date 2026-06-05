@@ -4,6 +4,25 @@ This repository packages a practical implementation workflow for Codex-style ski
 
 It combines decomposition, changed-surface review, iterative repair, and landability checks into one coherent suite, while preserving each skill as an independent building block.
 
+## Quick Start
+
+If you want one default entry point, start with:
+
+- `skills/landable-implementation-loop/`
+
+If you want the full workflow, install these top-level skill directories into your runtime:
+
+- `parallel-decomposer-skill`
+- `parallel-decomposer-auto`
+- `code-analyzer-suite`
+- `code-analyzer-auto`
+- `iterative-implementation-review`
+- `iterative-implementation-review-auto`
+- `landable-implementation-loop`
+- `grill-me`
+
+Use [skills/README.md](D:/FakeC/MCP/offiiceMCP/_mergework/implementation-workflows/skills/README.md) as the install map.
+
 ## Included Skills
 
 ### First-party skills
@@ -21,6 +40,19 @@ It combines decomposition, changed-surface review, iterative repair, and landabi
 - `grill-me`: adversarial critique and pressure-testing
 
 `grill-me` is included as a third-party component and should remain clearly attributed to its upstream source.
+
+## Skill Map
+
+| Installed skill name | Source directory in this repo | Purpose |
+| --- | --- | --- |
+| `parallel-decomposer-skill` | `skills/parallel-decomposer-skill/` | Manual or hybrid task decomposition |
+| `parallel-decomposer-auto` | `skills/parallel-decomposer-skill/parallel-decomposer-auto/` | Auto-oriented decomposition |
+| `code-analyzer-suite` | `skills/code-analyzer-suite/` | Manual or hybrid multidimensional code review |
+| `code-analyzer-auto` | `skills/code-analyzer-suite/code-analyzer-auto/` | Auto-oriented review orchestration |
+| `iterative-implementation-review` | `skills/iterative-implementation-review/iterative-implementation-review/` | Manual or standard implementation-review loop |
+| `iterative-implementation-review-auto` | `skills/iterative-implementation-review/iterative-implementation-review-auto/` | Auto-first implementation-review loop |
+| `landable-implementation-loop` | `skills/landable-implementation-loop/` | User-facing workflow entry point and final gate |
+| `grill-me` | `skills/external/grill-me/` | Third-party critique companion |
 
 ## Repository Layout
 
@@ -75,7 +107,7 @@ You can use this repository in two practical ways.
 
 ### Install the full workflow
 
-Copy the skill directories you want into your Codex or shared agent skills folder.
+Copy the installable skill directories into your Codex or shared agent skills folder using the installed skill names shown above.
 
 For Codex on Windows, a typical global layout is:
 
@@ -92,6 +124,11 @@ C:\Users\<you>\.codex\skills\
 ```
 
 The auto variants live inside the first-party skill folders in this repository, so install them as separate top-level skill directories if your runtime discovers skills by folder name.
+
+The most common mistake in this repository is copying a suite folder instead of the actual installable skill folder. The safe rule is:
+
+- copy the directory that directly contains the `SKILL.md` for the installed skill name you want
+- use [skills/README.md](D:/FakeC/MCP/offiiceMCP/_mergework/implementation-workflows/skills/README.md) when in doubt
 
 ### Install one skill only
 
@@ -130,6 +167,16 @@ Also maintain a root-level `THIRD_PARTY_NOTICES.md`.
 This repository keeps each skill in its own directory so it can still be copied or installed independently.
 
 First-party suites preserve their original support files such as `AGENTS.md`, `assets/`, `references/`, `scripts/`, and `evals/`.
+
+The repository uses two different shapes:
+
+- suite folders such as `skills/code-analyzer-suite/` and `skills/parallel-decomposer-skill/`
+- single-skill folders such as `skills/landable-implementation-loop/`
+
+The iterative suite is slightly different because both installable skills live under one wrapper folder:
+
+- `skills/iterative-implementation-review/iterative-implementation-review/`
+- `skills/iterative-implementation-review/iterative-implementation-review-auto/`
 
 ## Naming
 
