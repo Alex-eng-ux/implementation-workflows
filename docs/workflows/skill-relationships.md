@@ -10,6 +10,18 @@ This repository works best when each skill keeps a narrow responsibility.
 - `landable-implementation-loop` determines whether the outcome is genuinely shippable
 - `grill-me` acts as a pressure-test companion rather than the main controller
 
+## Repository Model
+
+This integrated repository sits on top of three source repositories:
+
+- `parallel-decomposer-skill` for decomposition
+- `code-analyzer-suite` for review
+- `iterative-implementation-review` for workflow orchestration
+
+Those source repositories keep their own identities and can still be installed independently.
+
+This repository exists to package them into one coherent workflow distribution with a clearer top-level story.
+
 ## Why This Separation Matters
 
 This avoids:

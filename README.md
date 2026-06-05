@@ -55,6 +55,36 @@ On Windows PowerShell:
 
 `grill-me` is included as a third-party component and should remain clearly attributed to its upstream source.
 
+## Source Repositories
+
+This repository is the integrated workflow suite, not the original source of every first-party skill.
+
+The main upstream repositories are:
+
+- Decomposition layer: [Alex-eng-ux/parallel-decomposer-skill](https://github.com/Alex-eng-ux/parallel-decomposer-skill)
+- Review layer: [Alex-eng-ux/code-analyzer-suite](https://github.com/Alex-eng-ux/code-analyzer-suite)
+- Workflow layer: [Alex-eng-ux/iterative-implementation-review](https://github.com/Alex-eng-ux/iterative-implementation-review)
+
+This repository packages those layers together with:
+
+- `landable-implementation-loop` as the user-facing entry point
+- `grill-me` as the third-party critique companion
+
+## How This Repo Relates To The Others
+
+Use the source repositories when you want to evolve one skill family in isolation.
+
+Use `implementation-workflows` when you want:
+
+- one installable home for the whole workflow
+- one README that explains how the pieces fit together
+- one place to distribute the full stack to multi-agent runtimes
+
+In short:
+
+- source repos are where individual skill families live and evolve
+- `implementation-workflows` is the packaged integration layer
+
 ## Skill Map
 
 | Installed skill name | Source directory in this repo | Purpose |
