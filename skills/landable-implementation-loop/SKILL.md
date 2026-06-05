@@ -1,6 +1,6 @@
 ---
 name: landable-implementation-loop
-description: Drive a coding task to a genuinely shippable state through scoped implementation, changed-surface review, adversarial self-critique, packaging checks, and real integration validation. Use when the user wants a project made usable, deployable, releasable, or "可落地" instead of merely analyzed.
+description: Drive a coding task to a genuinely shippable state through scoped implementation, changed-surface review, adversarial self-critique, packaging checks, and real integration validation. Use when the user wants a project made usable, deployable, or releasable instead of merely analyzed.
 ---
 
 # Landable Implementation Loop
@@ -28,30 +28,30 @@ A change is not finished just because:
 
 It is finished when the requested behavior is implemented, exposed through the public surface, validated through the right layers, and any remaining caveats are explicit and small.
 
-## Companion Skills Contract
+## Companion Skills
 
-This skill is a global entry point for a four-skill implementation workflow. It should actively orchestrate the companion skills by default when they are available and relevant.
+This skill can run as a standalone workflow. When companion skills are available, use them as accelerators without making them hard dependencies.
 
-Use this control hierarchy:
+Recommended companion roles:
 
 1. `landable-implementation-loop` is the user-facing entry point and final readiness gate.
-2. `iterative-implementation-review-auto` is the preferred loop controller for complex or repeated repair work.
-3. `parallel-decomposer-auto` is the decomposition and sub-agent dispatch layer.
-4. `code-analyzer-auto` is the changed-surface review layer.
-5. `grill-me` is the non-interactive adversarial critique layer.
+2. `iterative-implementation-review-auto` can control complex or repeated repair work.
+3. `parallel-decomposer-auto` can split broad work into ownership-safe tracks.
+4. `code-analyzer-auto` can review the changed surface.
+5. `grill-me` can pressure-test assumptions and tradeoffs.
 
 When the user explicitly invokes `landable-implementation-loop`, default behavior is:
 
-- read this skill first, then read the directly relevant companion skill bodies before applying them
-- if the task is complex, use `iterative-implementation-review-auto` as the main repair/review/verification loop
-- use `parallel-decomposer-auto` to split broad work into ownership-safe tracks when parallel work is useful
-- use `code-analyzer-auto` to review the changed surface after each meaningful implementation or repair round
-- use `grill-me` in non-interactive mode to pressure-test assumptions and convert plausible failure modes into repair todos
+- read this skill first, then read relevant companion skill bodies only when they are available and useful
+- if the task is complex, use an iterative repair/review/verification loop
+- split broad work into ownership-safe tracks when parallel work is useful
+- review the changed surface after each meaningful implementation or repair round
+- pressure-test assumptions and convert plausible failure modes into repair todos
 - keep `landable-implementation-loop` responsible for the final "is this genuinely usable?" judgment
 
 For small tasks, do not force unnecessary sub-agent dispatch. Still preserve the same gates in miniature: scope, implement, review, critique, verify.
 
-If one companion skill is unavailable in the current environment, keep the same workflow shape and perform that step manually rather than dropping it entirely. Stop only when the user explicitly required that exact automatic skill and no fallback is acceptable.
+If one companion skill is unavailable in the current environment, keep the same workflow shape and perform that step manually rather than dropping it entirely.
 
 ## Invocation rule
 
@@ -66,14 +66,6 @@ Minimum expected behavior after invocation:
 - run layered verification
 - continue repair loops until the remaining issues are non-blocking or an external blocker is real
 
-Equivalent Chinese trigger phrases include:
-
-- `按可落地工作流做`
-- `修到能上线再停`
-- `做到真能用`
-- `别停在分析`
-- `连上自己调试一下`
-
 ## Default loop
 
 ### 1. Restate the user-visible outcome
@@ -82,7 +74,7 @@ Before editing, say what the user should be able to do after the change.
 
 Examples:
 
-- "Codex can load this MCP server globally and successfully call a real tool."
+- "The target agent runtime can load this MCP server and successfully call a real tool."
 - "The release pipeline can build and smoke-install a wheel without pretending the whole legacy repo is lint-clean."
 - "A PowerPoint tool no longer registers successfully while failing on first use."
 
@@ -106,8 +98,8 @@ If the task is large, split it into independent tracks with clear ownership.
 Good splits:
 
 - runtime fixes
-- release/CI fixes
-- integration/debug path
+- release or CI fixes
+- integration or debug path
 - changed-surface review
 
 Bad splits:
@@ -137,11 +129,11 @@ Do not reduce review to style.
 Look for:
 
 - undefined helper references
-- wrong app/file activation logic
+- wrong app or file activation logic
 - path validation gaps
 - broken entry points
 - misleading or impossible CI gates
-- build/install drift
+- build or install drift
 - a mismatch between what docs claim and what the public surface exposes
 
 Keep the focus on issues that could stop a real user or release.
@@ -163,11 +155,11 @@ Turn concrete answers into repair tasks. Ignore vague anxiety; fix plausible fai
 
 Run validation from cheapest to most real:
 
-1. Focused correctness lint or syntax checks
-2. Focused tests
-3. Build or packaging checks
-4. Install or entry-point checks
-5. Real integration checks
+1. focused correctness lint or syntax checks
+2. focused tests
+3. build or packaging checks
+4. install or entry-point checks
+5. real integration checks
 
 Examples:
 
@@ -186,7 +178,7 @@ The task is ready to close when:
 - requested behavior exists
 - public surface exposes it
 - focused checks pass
-- packaging/install path works when relevant
+- packaging or install path works when relevant
 - real integration has been exercised when relevant
 - remaining caveats are clearly named and non-blocking
 
@@ -226,7 +218,6 @@ Avoid these:
 
 This skill should be used when the user says things like:
 
-- "把这个修成可落地的项目"
 - "keep going until it really works"
 - "don't stop at analysis"
 - "make this releasable"
