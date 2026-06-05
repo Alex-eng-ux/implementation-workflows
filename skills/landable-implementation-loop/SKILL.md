@@ -228,7 +228,7 @@ This skill should be used when the user says things like:
 
 - "把这个修成可落地的项目"
 - "keep going until it really works"
-- "don’t stop at analysis"
+- "don't stop at analysis"
 - "make this releasable"
 - "ship this properly"
 - "connect it and debug it yourself"

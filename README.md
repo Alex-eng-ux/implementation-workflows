@@ -69,6 +69,50 @@ For broad or risky work, the intended flow is:
 5. Pressure-test assumptions with `grill-me`.
 6. Let `landable-implementation-loop` decide whether the finish line is actually credible.
 
+## Installation
+
+You can use this repository in two practical ways.
+
+### Install the full workflow
+
+Copy the skill directories you want into your Codex or shared agent skills folder.
+
+For Codex on Windows, a typical global layout is:
+
+```text
+C:\Users\<you>\.codex\skills\
+  parallel-decomposer-skill\
+  parallel-decomposer-auto\
+  code-analyzer-suite\
+  code-analyzer-auto\
+  iterative-implementation-review\
+  iterative-implementation-review-auto\
+  landable-implementation-loop\
+  grill-me\
+```
+
+The auto variants live inside the first-party skill folders in this repository, so install them as separate top-level skill directories if your runtime discovers skills by folder name.
+
+### Install one skill only
+
+If you only want one capability, copy just that skill directory:
+
+- `skills/parallel-decomposer-skill/`
+- `skills/parallel-decomposer-skill/parallel-decomposer-auto/`
+- `skills/code-analyzer-suite/`
+- `skills/code-analyzer-suite/code-analyzer-auto/`
+- `skills/iterative-implementation-review/iterative-implementation-review/`
+- `skills/iterative-implementation-review/iterative-implementation-review-auto/`
+- `skills/landable-implementation-loop/`
+
+### Third-party companion skill
+
+If you also want the critique layer, copy:
+
+- `skills/external/grill-me/`
+
+Keep its `LICENSE` and `UPSTREAM.md` with the skill when redistributing it.
+
 ## Third-Party Attribution
 
 Third-party materials should be handled under `skills/external/`.
